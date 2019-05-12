@@ -23,7 +23,7 @@ import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.testing.AbstractMojoTestCase;
 import org.apache.maven.project.MavenProject;
 import org.apache.maven.project.MavenProjectBuilder;
-import org.jvnet.mjiip.v_2.XJC2Mojo;
+import org.jvnet.mjiip.v_2_2.XJC22Mojo;
 
 public abstract class JAXBGenerateTest extends AbstractMojoTestCase {
 
@@ -68,7 +68,7 @@ public abstract class JAXBGenerateTest extends AbstractMojoTestCase {
 		final MavenProject mavenProject = mavenProjectBuilder.build(pom, localRepository, null);
 		
 
-		final XJC2Mojo generator = (XJC2Mojo) lookupMojo("generate", pom);
+		final XJC22Mojo generator = (XJC22Mojo) lookupMojo("generate", pom);
 		generator.setProject(mavenProject);
 		generator.setLocalRepository(localRepository);
 		generator.setSchemaDirectory(new File(getBaseDir(),"src/test/resources/"));
